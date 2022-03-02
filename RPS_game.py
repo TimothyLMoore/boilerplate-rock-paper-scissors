@@ -7,11 +7,11 @@ def play(player1, player2, num_games, verbose=False):
     p1_prev_play = ""
     p2_prev_play = ""
     results = {"p1": 0, "p2": 0, "tie": 0}
-
+    played = []
     for _ in range(num_games):
         p1_play = player1(p2_prev_play)
         p2_play = player2(p1_prev_play)
-
+        played.append(p2_play)
         if p1_play == p2_play:
             results["tie"] += 1
             winner = "Tie."
@@ -42,7 +42,7 @@ def play(player1, player2, num_games, verbose=False):
     print("Final results:", results)
     print(f"Player 1 win rate: {win_rate}%")
 
-    return (win_rate)
+    return (win_rate, played)
 
 
 def quincy(prev_play, counter=[0]):
