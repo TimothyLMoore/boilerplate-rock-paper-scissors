@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a7f82190-91c9-4974-9903-ad076455b670" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RPS_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/RPS_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RPS.py" beforeDir="false" afterPath="$PROJECT_DIR$/RPS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.h5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,20 +42,21 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="'Inital Commit'" />
     <MESSAGE value="feat: beginning to build model for rl&#10;&#10;Created a model to use for my Deep Q-Learning agent model sizes are :&#10;Input: 10&#10;Hidden-1: 10&#10;Hidden-2: 5&#10;Output: 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: beginning to build model for rl&#10;&#10;Created a model to use for my Deep Q-Learning agent model sizes are :&#10;Input: 10&#10;Hidden-1: 10&#10;Hidden-2: 5&#10;Output: 3" />
+    <MESSAGE value="feat: first model&#10;&#10;Trained my first model with multiclass classification:&#10;Accuracy = 0.3536 (Goal = 0.4000)&#10;&#10;Model &#10;Input: 30 (Flattened [10,3])&#10;Hidden-1: Dense - 20 - ReLU&#10;Hidden-2: Dense - 10 - ReLU&#10;Hidden-3: Dense - 5 - Sigmoid&#10;Output: Dense - 3 - Softmax" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: first model&#10;&#10;Trained my first model with multiclass classification:&#10;Accuracy = 0.3536 (Goal = 0.4000)&#10;&#10;Model &#10;Input: 30 (Flattened [10,3])&#10;Hidden-1: Dense - 20 - ReLU&#10;Hidden-2: Dense - 10 - ReLU&#10;Hidden-3: Dense - 5 - Sigmoid&#10;Output: Dense - 3 - Softmax" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="883" y="140" key="CommitChangelistDialog2" timestamp="1646080273602">
+    <state x="1150" y="118" key="CommitChangelistDialog2" timestamp="1646252963021">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="883" y="140" key="CommitChangelistDialog2/0.0.1920.1160/1920.0.1920.1200@0.0.1920.1160" timestamp="1646080273601" />
+    <state x="1150" y="118" key="CommitChangelistDialog2/0.0.1920.1160/1920.0.1920.1200@0.0.1920.1160" timestamp="1646252963021" />
     <state x="820" y="491" key="Github.Dialog.Accounts.Choose" timestamp="1645822791149">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="820" y="491" key="Github.Dialog.Accounts.Choose/0.0.1920.1160/1920.0.1920.1200@0.0.1920.1160" timestamp="1645822791149" />
-    <state x="552" y="312" key="Vcs.Push.Dialog.v2" timestamp="1646080277560">
+    <state x="552" y="312" key="Vcs.Push.Dialog.v2" timestamp="1646252967258">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="552" y="312" key="Vcs.Push.Dialog.v2/0.0.1920.1160/1920.0.1920.1200@0.0.1920.1160" timestamp="1646080277560" />
+    <state x="552" y="312" key="Vcs.Push.Dialog.v2/0.0.1920.1160/1920.0.1920.1200@0.0.1920.1160" timestamp="1646252967258" />
   </component>
 </project>
