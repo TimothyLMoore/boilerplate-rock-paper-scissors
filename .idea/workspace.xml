@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7f82190-91c9-4974-9903-ad076455b670" name="Default Changelist" comment="">
+    <list default="true" id="a7f82190-91c9-4974-9903-ad076455b670" name="Default Changelist" comment="feat: program works&#10;&#10;Needs work:&#10;Model works but doesn't pass 2/4 test cases&#10;Improved runspeed 10x">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RPS.py" beforeDir="false" afterPath="$PROJECT_DIR$/RPS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/model/keras_metadata.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/model/saved_model.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/model/variables/variables.data-00000-of-00001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/model/variables/variables.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +26,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="c874c149-6a65-457b-bb68-d0a54567f190" />
-  </component>
   <component name="ProjectId" id="25cNmRnbByAdRUqnkOVVT0gRNtb" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,6 +35,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -43,20 +44,31 @@
     <MESSAGE value="'Inital Commit'" />
     <MESSAGE value="feat: beginning to build model for rl&#10;&#10;Created a model to use for my Deep Q-Learning agent model sizes are :&#10;Input: 10&#10;Hidden-1: 10&#10;Hidden-2: 5&#10;Output: 3" />
     <MESSAGE value="feat: first model&#10;&#10;Trained my first model with multiclass classification:&#10;Accuracy = 0.3536 (Goal = 0.4000)&#10;&#10;Model &#10;Input: 30 (Flattened [10,3])&#10;Hidden-1: Dense - 20 - ReLU&#10;Hidden-2: Dense - 10 - ReLU&#10;Hidden-3: Dense - 5 - Sigmoid&#10;Output: Dense - 3 - Softmax" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: first model&#10;&#10;Trained my first model with multiclass classification:&#10;Accuracy = 0.3536 (Goal = 0.4000)&#10;&#10;Model &#10;Input: 30 (Flattened [10,3])&#10;Hidden-1: Dense - 20 - ReLU&#10;Hidden-2: Dense - 10 - ReLU&#10;Hidden-3: Dense - 5 - Sigmoid&#10;Output: Dense - 3 - Softmax" />
+    <MESSAGE value="feat: program works&#10;&#10;Needs work:&#10;Model works but doesn't pass 2/4 test cases&#10;Player function needs improvement it runs too slow" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: program works&#10;&#10;Needs work:&#10;Model works but doesn't pass 2/4 test cases&#10;Player function needs improvement it runs too slow" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1150" y="118" key="CommitChangelistDialog2" timestamp="1646252963021">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="2680" y="118" key="CommitChangelistDialog2" timestamp="1646428292173">
+      <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="1150" y="118" key="CommitChangelistDialog2/0.0.1920.1160/1920.0.1920.1200@0.0.1920.1160" timestamp="1646252963021" />
+    <state x="2680" y="118" key="CommitChangelistDialog2/0.0.1920.1160/1920.0.1920.1200@1920.0.1920.1200" timestamp="1646428292173" />
     <state x="820" y="491" key="Github.Dialog.Accounts.Choose" timestamp="1645822791149">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="820" y="491" key="Github.Dialog.Accounts.Choose/0.0.1920.1160/1920.0.1920.1200@0.0.1920.1160" timestamp="1645822791149" />
-    <state x="552" y="312" key="Vcs.Push.Dialog.v2" timestamp="1646252967258">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="2381" y="244" key="SettingsEditor" timestamp="1646428392282">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2381" y="244" key="SettingsEditor/0.0.1920.1160/1920.0.1920.1200@1920.0.1920.1200" timestamp="1646428392282" />
+    <state x="2472" y="323" key="Vcs.Push.Dialog.v2" timestamp="1646341886690">
+      <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="552" y="312" key="Vcs.Push.Dialog.v2/0.0.1920.1160/1920.0.1920.1200@0.0.1920.1160" timestamp="1646252967258" />
+    <state x="2472" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1160/1920.0.1920.1200@1920.0.1920.1200" timestamp="1646341886690" />
+    <state x="2543" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1646413294686">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2543" y="265" width="672" height="678" key="search.everywhere.popup/0.0.1920.1160/1920.0.1920.1200@1920.0.1920.1200" timestamp="1646413294686" />
   </component>
 </project>
