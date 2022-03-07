@@ -24,13 +24,13 @@ import tensorflow as tf
 def build_model():
 
     model = Sequential()
-    model.add(Dense(80, input_dim = 60, activation = 'relu')) # Rectified Linear Unit Activation Function
-    model.add(Dropout(0.2))
-    model.add(Dense(40, activation = 'relu'))
-    model.add(Dropout(0.2))
-    model.add(Dense(20, activation = 'sigmoid'))
-    model.add(Dropout(0.2))
-    model.add(Dense(10, activation = 'relu'))
+    model.add(Dense(120, input_dim = 60, activation = 'relu')) # Rectified Linear Unit Activation Function
+    model.add(Dropout(0.5))
+    model.add(Dense(80, activation = 'relu'))
+    model.add(Dropout(0.5))
+    model.add(Dense(40, activation = 'sigmoid'))
+    model.add(Dropout(0.5))
+    model.add(Dense(20, activation = 'relu'))
     model.add(Dense(3, activation = 'softmax')) # Softmax for multi-class classification
     # Compile model here
     model.compile(loss = 'categorical_crossentropy', optimizer = 'adam', metrics = ['accuracy'])
@@ -41,14 +41,14 @@ if __name__ == '__main__':
     model = load_model(filepath, compile = True)
     #model = build_model()
     played = []
-    for i in range(1,25):
-        _, j = play(player, quincy, 50)
+    for i in range(1,20):
+        _, j = play(player, quincy, 20)
         played.append(j)
-        _, j = play(player, abbey, 50)
+        _, j = play(player, abbey, 20)
         played.append(j)
-        _, j = play(player, kris, 50)
+        _, j = play(player, kris, 20)
         played.append(j)
-        _, j = play(player, mrugesh, 50)
+        _, j = play(player, mrugesh, 20)
         played.append(j)
         print(i)
     played = list(itertools.chain(*played))
@@ -80,7 +80,7 @@ if __name__ == '__main__':
 
     print(np.shape(X),np.shape(y))
 
-    model.fit(X,y, epochs = 12, batch_size=100)
+    model.fit(X,y, epochs = 3, batch_size=30)
 
     filepath = "./model"
     save_model(model, filepath)

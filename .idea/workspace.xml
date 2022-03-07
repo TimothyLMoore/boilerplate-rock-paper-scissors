@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7f82190-91c9-4974-9903-ad076455b670" name="Default Changelist" comment="feat: program works&#10;&#10;Needs work:&#10;Model works but doesn't pass 2/4 test cases&#10;Improved runspeed 10x">
+    <list default="true" id="a7f82190-91c9-4974-9903-ad076455b670" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RPS.py" beforeDir="false" afterPath="$PROJECT_DIR$/RPS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/model/keras_metadata.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/model/saved_model.pb" afterDir="false" />
@@ -45,14 +44,15 @@
     <MESSAGE value="feat: beginning to build model for rl&#10;&#10;Created a model to use for my Deep Q-Learning agent model sizes are :&#10;Input: 10&#10;Hidden-1: 10&#10;Hidden-2: 5&#10;Output: 3" />
     <MESSAGE value="feat: first model&#10;&#10;Trained my first model with multiclass classification:&#10;Accuracy = 0.3536 (Goal = 0.4000)&#10;&#10;Model &#10;Input: 30 (Flattened [10,3])&#10;Hidden-1: Dense - 20 - ReLU&#10;Hidden-2: Dense - 10 - ReLU&#10;Hidden-3: Dense - 5 - Sigmoid&#10;Output: Dense - 3 - Softmax" />
     <MESSAGE value="feat: program works&#10;&#10;Needs work:&#10;Model works but doesn't pass 2/4 test cases&#10;Player function needs improvement it runs too slow" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: program works&#10;&#10;Needs work:&#10;Model works but doesn't pass 2/4 test cases&#10;Player function needs improvement it runs too slow" />
+    <MESSAGE value="feat: program works&#10;&#10;Needs work:&#10;Model works but doesn't pass 2/4 test cases&#10;Improved runspeed 10x" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: program works&#10;&#10;Needs work:&#10;Model works but doesn't pass 2/4 test cases&#10;Improved runspeed 10x" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2680" y="118" key="CommitChangelistDialog2" timestamp="1646428292173">
+    <state x="2680" y="118" key="CommitChangelistDialog2" timestamp="1646428400206">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="1150" y="118" key="CommitChangelistDialog2/0.0.1920.1160/1920.0.1920.1200@0.0.1920.1160" timestamp="1646252963021" />
-    <state x="2680" y="118" key="CommitChangelistDialog2/0.0.1920.1160/1920.0.1920.1200@1920.0.1920.1200" timestamp="1646428292173" />
+    <state x="2680" y="118" key="CommitChangelistDialog2/0.0.1920.1160/1920.0.1920.1200@1920.0.1920.1200" timestamp="1646428400206" />
     <state x="820" y="491" key="Github.Dialog.Accounts.Choose" timestamp="1645822791149">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -61,11 +61,11 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2381" y="244" key="SettingsEditor/0.0.1920.1160/1920.0.1920.1200@1920.0.1920.1200" timestamp="1646428392282" />
-    <state x="2472" y="323" key="Vcs.Push.Dialog.v2" timestamp="1646341886690">
+    <state x="2472" y="323" key="Vcs.Push.Dialog.v2" timestamp="1646428407114">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="552" y="312" key="Vcs.Push.Dialog.v2/0.0.1920.1160/1920.0.1920.1200@0.0.1920.1160" timestamp="1646252967258" />
-    <state x="2472" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1160/1920.0.1920.1200@1920.0.1920.1200" timestamp="1646341886690" />
+    <state x="2472" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1160/1920.0.1920.1200@1920.0.1920.1200" timestamp="1646428407114" />
     <state x="2543" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1646413294686">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
