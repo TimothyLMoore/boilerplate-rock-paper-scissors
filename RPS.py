@@ -13,23 +13,27 @@ filepath = "./model"
 model = load_model(filepath, compile = True)
 
 
-def player(prev_play, opponent_history=["R","P","S"]):
+def player(prev_play, opponent_history=["R","P","S"], my_history=["R","P","S"]):
 
     if not(prev_play == ""):
         opponent_history.append(prev_play)
-    df = pd.DataFrame(opponent_history, columns = ['throws'])
-    df = pd.get_dummies(df['throws'])
+    opp_df = pd.DataFrame(opponent_history, columns = ['throws'])
+    my_df = pd.DataFrame(my_history, columns = ['throws'])
+    opp_df = pd.get_dummies(opp_df['throws'])
+    my_df = pd.get_dummies(my_df['throws'])
 
 
 
-    if len(df) < 20:
-        df_head = pd.DataFrame(np.zeros((20 - len(df), 3)), columns = ["P", "R", "S"])
-        df = pd.concat([df_head,df])
+    if len(opp_df) < 10:
+        df_head = pd.DataFrame(np.zeros((10 - len(opp_df), 3)), columns = ["P", "R", "S"])
+        opp_df = pd.concat([df_head,opp_df])
+    if len(my_df) < 10:
+        df_head = pd.DataFrame(np.zeros((10 - len(my_df), 3)), columns = ["P", "R", "S"])
+        my_df = pd.concat([df_head,my_df])
 
 
+    df =  pd.concat([my_df[-10:],opp_df[-10:]])
 
-
-    df = df[-20:]
     np_df = df.to_numpy()
 
 
@@ -45,6 +49,6 @@ def player(prev_play, opponent_history=["R","P","S"]):
     pred = model.predict(X)
     max_index = [np.argmax(pred)]
     pred = str(le.inverse_transform(max_index))[2]
+    my_history.append(pred)
 
-
-    return pred #random.choice(['R',"P","S"])
+    return random.choice(['R',"P","S"])
