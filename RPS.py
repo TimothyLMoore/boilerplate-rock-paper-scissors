@@ -13,8 +13,18 @@ filepath = "./model"
 model = load_model(filepath, compile = True)
 
 
-def player(prev_play, opponent_history=["R","P","S"], my_history=["R","P","S"]):
+def player(prev_play, opponent_history=["R","P","S"], my_history=["R","P","S"],play_order=[{
+              "RR": 1,
+              "RP": 1,
+              "RS": 1,
+              "PR": 1,
+              "PP": 1,
+              "PS": 1,
+              "SR": 1,
+              "SP": 1,
+              "SS": 1,}]):
 
+    play_order_values = list(play_order[0].values())
     if not(prev_play == ""):
         opponent_history.append(prev_play)
     opp_df = pd.DataFrame(opponent_history, columns = ['throws'])
@@ -39,16 +49,21 @@ def player(prev_play, opponent_history=["R","P","S"], my_history=["R","P","S"]):
 
 
     X = np_df.flatten()
+    po_val = np.array(play_order_values)
+    po_val = po_val/po_val.sum()
+    #print(X)
+    #print(po_val)
+    X = np.concatenate((X,po_val))
     #print(np.shape(X))
-    X = np.reshape(X,(1,60,1))
+    X = np.reshape(X,(1,69,1))
     #print(X)
     #print(np.shape(X))
 
-
-
+    #print(X)
     pred = model.predict(X)
     max_index = [np.argmax(pred)]
     pred = str(le.inverse_transform(max_index))[2]
     my_history.append(pred)
-
-    return random.choice(['R',"P","S"])
+    play_order[0][("".join(my_history[-2:]))] += 1
+    #print(play_order)
+    return pred #random.choice(['R',"P","S"])

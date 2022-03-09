@@ -23,7 +23,7 @@ import tensorflow as tf
 def build_model():
 
     model = Sequential()
-    model.add(Dense(120, input_dim = 60, activation = 'relu')) # Rectified Linear Unit Activation Function
+    model.add(Dense(120, input_dim = 69, activation = 'relu')) # Rectified Linear Unit Activation Function
     model.add(Dropout(0.5))
     model.add(Dense(80, activation = 'relu'))
     model.add(Dropout(0.5))
@@ -42,18 +42,29 @@ if __name__ == '__main__':
     model = load_model(filepath, compile = True)
     #model = build_model()
     opp_played = []
-    my_played = []
-    for i in range(1,3):
-        _, j, k = play(player, quincy, 1000)
+    my_played = ["R"]
+    play_order=[{
+              "RR": 1,
+              "RP": 1,
+              "RS": 1,
+              "PR": 1,
+              "PP": 1,
+              "PS": 1,
+              "SR": 1,
+              "SP": 1,
+              "SS": 1,
+          }]
+    for i in range(1,5):
+        _, j, k = play(player, quincy, 500)
         opp_played.append(j)
         my_played.append(k)
-        _, j, k = play(player, abbey, 1000)
+        _, j, k = play(player, abbey, 500)
         opp_played.append(j)
         my_played.append(k)
-        _, j, k = play(player, kris, 1000)
+        _, j, k = play(player, kris, 500)
         opp_played.append(j)
         my_played.append(k)
-        _, j, k = play(player, mrugesh, 1000)
+        _, j, k = play(player, mrugesh, 500)
         opp_played.append(j)
         my_played.append(k)
         print(i)
@@ -73,10 +84,15 @@ if __name__ == '__main__':
     opp_np_df = opp_df.to_numpy()
     my_np_df = my_df.to_numpy()
     for i in range(0,len(opp_df)-10):
+        play_order_values = list(play_order[0].values())
+        po_val = np.array(play_order_values)
+        po_val = po_val/po_val.sum()
         X = np.concatenate([X,my_np_df[i:i+10].flatten(),opp_np_df[i:i+10].flatten()])
+        X = np.concatenate((X,po_val))
+        play_order[0][("".join([my_played[i-1],my_played[i]]))] += 1
         if i % 1000 == 0:
             print(i)
-    X = X.reshape(len(X)//60,60)
+    X = X.reshape(len(X)//69,69)
 
     le = LabelEncoder()
     le.fit(y)
@@ -92,7 +108,7 @@ if __name__ == '__main__':
 
     print(np.shape(X),np.shape(y))
 
-    model.fit(X_train,y_train,validation_data = [X_test, y_test], epochs = 34, batch_size=30)
+    model.fit(X_train,y_train,validation_data = [X_test, y_test], epochs = 32, batch_size=30)
 
     filepath = "./model"
     save_model(model, filepath)
