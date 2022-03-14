@@ -54,17 +54,17 @@ if __name__ == '__main__':
               "SP": 1,
               "SS": 1,
           }]
-    for i in range(1,5):
-        _, j, k = play(player, quincy, 500)
+    for i in range(1,2):
+        _, j, k = play(player, abbey, 5000)
         opp_played.append(j)
         my_played.append(k)
-        _, j, k = play(player, abbey, 500)
+        _, j, k = play(player, quincy, 5000)
         opp_played.append(j)
         my_played.append(k)
-        _, j, k = play(player, kris, 500)
+        _, j, k = play(player, kris, 5000)
         opp_played.append(j)
         my_played.append(k)
-        _, j, k = play(player, mrugesh, 500)
+        _, j, k = play(player, mrugesh, 5000)
         opp_played.append(j)
         my_played.append(k)
         print(i)
@@ -90,14 +90,22 @@ if __name__ == '__main__':
         X = np.concatenate([X,my_np_df[i:i+10].flatten(),opp_np_df[i:i+10].flatten()])
         X = np.concatenate((X,po_val))
         play_order[0][("".join([my_played[i-1],my_played[i]]))] += 1
-        if i % 1000 == 0:
+        #print(play_order[0],my_played[i])
+        if i % 200 == 0:
             print(i)
+
     X = X.reshape(len(X)//69,69)
 
     le = LabelEncoder()
     le.fit(y)
     y = le.transform(y)
-    y = tf.keras.utils.to_categorical(y, num_classes=3, dtype="int")
+    y = tf.keras.utils.to_categorical(y, num_classes=3, dtype="float")
+    y2 = le.transform(pd.DataFrame(opp_played))
+    y2 = tf.keras.utils.to_categorical(y2, num_classes=3, dtype="float")
+    y = y * 0.6666
+    y2 = y2 * 0.3334
+    y = np.add(y,y2)
+
 
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.33, random_state=42)
@@ -108,7 +116,7 @@ if __name__ == '__main__':
 
     print(np.shape(X),np.shape(y))
 
-    model.fit(X_train,y_train,validation_data = [X_test, y_test], epochs = 32, batch_size=30)
+    model.fit(X_train,y_train,validation_data = [X_test, y_test], epochs = 256, batch_size=30)
 
     filepath = "./model"
     save_model(model, filepath)
