@@ -23,15 +23,15 @@ import tensorflow as tf
 def build_model():
 
     model = Sequential()
-    model.add(Dense(120, input_dim = 69, activation = 'relu')) # Rectified Linear Unit Activation Function
+    model.add(Dense(240, input_dim = 189, activation = 'relu')) # Rectified Linear Unit Activation Function
     model.add(Dropout(0.5))
-    model.add(Dense(80, activation = 'relu'))
+    model.add(Dense(120, activation = 'relu'))
     model.add(Dropout(0.5))
-    model.add(Dense(40, activation = 'sigmoid'))
+    model.add(Dense(60, activation = 'sigmoid'))
     model.add(Dropout(0.5))
-    model.add(Dense(20, activation = 'relu'))
+    model.add(Dense(30, activation = 'relu'))
     model.add(Dropout(0.5))
-    model.add(Dense(8, activation = 'relu'))
+    model.add(Dense(10, activation = 'relu'))
     model.add(Dense(3, activation = 'softmax')) # Softmax for multi-class classification
     # Compile model here
     model.compile(loss = 'categorical_crossentropy', optimizer = 'adam', metrics = ['accuracy'])
@@ -55,16 +55,16 @@ if __name__ == '__main__':
               "SS": 1,
           }]
     for i in range(1,2):
-        _, j, k = play(player, abbey, 5000)
+        _, j, k = play(player, abbey, 8000)
         opp_played.append(j)
         my_played.append(k)
-        _, j, k = play(player, quincy, 5000)
+        _, j, k = play(player, quincy, 8000)
         opp_played.append(j)
         my_played.append(k)
-        _, j, k = play(player, kris, 5000)
+        _, j, k = play(player, kris, 8000)
         opp_played.append(j)
         my_played.append(k)
-        _, j, k = play(player, mrugesh, 5000)
+        _, j, k = play(player, mrugesh, 8000)
         opp_played.append(j)
         my_played.append(k)
         print(i)
@@ -76,25 +76,25 @@ if __name__ == '__main__':
     opp_df = pd.get_dummies(opp_df['throws'])
     my_df = pd.DataFrame(my_played, columns = ['throws'])
     my_df = pd.get_dummies(my_df['throws'])
-    df_head = pd.DataFrame(np.zeros((10, 3)), columns = ["P", "R", "S"])
+    df_head = pd.DataFrame(np.zeros((30, 3)), columns = ["P", "R", "S"])
     opp_df = pd.concat([df_head,opp_df])
     my_df = pd.concat([df_head,my_df])
     y = pd.DataFrame(y)
     X = np.empty(0)
     opp_np_df = opp_df.to_numpy()
     my_np_df = my_df.to_numpy()
-    for i in range(0,len(opp_df)-10):
+    for i in range(0,len(opp_df)-30):
         play_order_values = list(play_order[0].values())
         po_val = np.array(play_order_values)
         po_val = po_val/po_val.sum()
-        X = np.concatenate([X,my_np_df[i:i+10].flatten(),opp_np_df[i:i+10].flatten()])
+        X = np.concatenate([X,my_np_df[i:i+30].flatten(),opp_np_df[i:i+30].flatten()])
         X = np.concatenate((X,po_val))
         play_order[0][("".join([my_played[i-1],my_played[i]]))] += 1
         #print(play_order[0],my_played[i])
-        if i % 200 == 0:
+        if i % 1000 == 0:
             print(i)
 
-    X = X.reshape(len(X)//69,69)
+    X = X.reshape(len(X)//189,189)
 
     le = LabelEncoder()
     le.fit(y)
@@ -116,7 +116,7 @@ if __name__ == '__main__':
 
     print(np.shape(X),np.shape(y))
 
-    model.fit(X_train,y_train,validation_data = [X_test, y_test], epochs = 256, batch_size=30)
+    model.fit(X_train,y_train,validation_data = [X_test, y_test], epochs = 20, batch_size=30)
 
     filepath = "./model"
     save_model(model, filepath)

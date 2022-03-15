@@ -34,15 +34,15 @@ def player(prev_play, opponent_history=["R","P","S"], my_history=["R","P","S"],p
 
 
 
-    if len(opp_df) < 10:
-        df_head = pd.DataFrame(np.zeros((10 - len(opp_df), 3)), columns = ["P", "R", "S"])
+    if len(opp_df) < 30:
+        df_head = pd.DataFrame(np.zeros((30 - len(opp_df), 3)), columns = ["P", "R", "S"])
         opp_df = pd.concat([df_head,opp_df])
-    if len(my_df) < 10:
-        df_head = pd.DataFrame(np.zeros((10 - len(my_df), 3)), columns = ["P", "R", "S"])
+    if len(my_df) < 30:
+        df_head = pd.DataFrame(np.zeros((30 - len(my_df), 3)), columns = ["P", "R", "S"])
         my_df = pd.concat([df_head,my_df])
 
 
-    df =  pd.concat([my_df[-10:],opp_df[-10:]])
+    df =  pd.concat([my_df[-30:],opp_df[-30:]])
 
     np_df = df.to_numpy()
 
@@ -55,7 +55,7 @@ def player(prev_play, opponent_history=["R","P","S"], my_history=["R","P","S"],p
     #print(po_val)
     X = np.concatenate((X,po_val))
     #print(np.shape(X))
-    X = np.reshape(X,(1,69,1))
+    X = np.reshape(X,(1,189,1))
     #print(X)
     #print(np.shape(X))
 
