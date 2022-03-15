@@ -4,11 +4,7 @@
     <list default="true" id="a7f82190-91c9-4974-9903-ad076455b670" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RPS.py" beforeDir="false" afterPath="$PROJECT_DIR$/RPS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/model/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/model/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/model/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/model/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,14 +43,15 @@
     <MESSAGE value="feat: program works&#10;&#10;Needs work:&#10;Model works but doesn't pass 2/4 test cases&#10;Improved runspeed 10x" />
     <MESSAGE value="feat: Nueral netowrk Hypertuning&#10;&#10;Needs work:&#10;Model works but doesn't pass 2/4 test cases&#10;Model:&#10;model = Sequential()&#10;    model.add(Dense(120, input_dim = 60, activation = 'relu')) # Rectified Linear Unit Activation Function&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(80, activation = 'relu'))&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(40, activation = 'sigmoid'))&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(20, activation = 'relu'))&#10;    model.add(Dense(3, activation = 'softmax')) # Softmax for multi-class classification&#10;    # Compile model here&#10;    model.compile(loss = 'categorical_crossentropy', optimizer = 'adam', metrics = ['accuracy'])" />
     <MESSAGE value="feat: Adding my own move history to the input&#10;&#10;Needs work:&#10;Model works but doesn't pass 2/4 test cases&#10;Model:&#10;model = Sequential()&#10;    model.add(Dense(120, input_dim = 60, activation = 'relu')) # Rectified Linear Unit Activation Function&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(80, activation = 'relu'))&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(40, activation = 'sigmoid'))&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(20, activation = 'relu'))&#10;    model.add(Dense(3, activation = 'softmax')) # Softmax for multi-class classification&#10;    # Compile model here&#10;    model.compile(loss = 'categorical_crossentropy', optimizer = 'adam', metrics = ['accuracy'])" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Adding my own move history to the input&#10;&#10;Needs work:&#10;Model works but doesn't pass 2/4 test cases&#10;Model:&#10;model = Sequential()&#10;    model.add(Dense(120, input_dim = 60, activation = 'relu')) # Rectified Linear Unit Activation Function&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(80, activation = 'relu'))&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(40, activation = 'sigmoid'))&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(20, activation = 'relu'))&#10;    model.add(Dense(3, activation = 'softmax')) # Softmax for multi-class classification&#10;    # Compile model here&#10;    model.compile(loss = 'categorical_crossentropy', optimizer = 'adam', metrics = ['accuracy'])" />
+    <MESSAGE value="feat: Extended input to last 30 moves&#10;&#10;Needs work:&#10;Model works but doesn't pass 2/4 test cases&#10;Model:&#10;model = Sequential()&#10;    model.add(Dense(240, input_dim = 189, activation = 'relu')) # Rectified Linear Unit Activation Function&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(120, activation = 'relu'))&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(60, activation = 'sigmoid'))&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(30, activation = 'relu'))&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(10, activation = 'relu'))    &#10;    model.add(Dense(3, activation = 'softmax')) # Softmax for multi-class classification&#10;    # Compile model here&#10;    model.compile(loss = 'categorical_crossentropy', optimizer = 'adam', metrics = ['accuracy'])" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Extended input to last 30 moves&#10;&#10;Needs work:&#10;Model works but doesn't pass 2/4 test cases&#10;Model:&#10;model = Sequential()&#10;    model.add(Dense(240, input_dim = 189, activation = 'relu')) # Rectified Linear Unit Activation Function&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(120, activation = 'relu'))&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(60, activation = 'sigmoid'))&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(30, activation = 'relu'))&#10;    model.add(Dropout(0.5))&#10;    model.add(Dense(10, activation = 'relu'))    &#10;    model.add(Dense(3, activation = 'softmax')) # Softmax for multi-class classification&#10;    # Compile model here&#10;    model.compile(loss = 'categorical_crossentropy', optimizer = 'adam', metrics = ['accuracy'])" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2673" y="21" key="CommitChangelistDialog2" timestamp="1647278679065">
+    <state x="2673" y="21" key="CommitChangelistDialog2" timestamp="1647351433943">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="1150" y="118" key="CommitChangelistDialog2/0.0.1920.1160/1920.0.1920.1200@0.0.1920.1160" timestamp="1646252963021" />
-    <state x="2673" y="21" key="CommitChangelistDialog2/0.0.1920.1160/1920.0.1920.1200@1920.0.1920.1200" timestamp="1647278679065" />
+    <state x="2673" y="21" key="CommitChangelistDialog2/0.0.1920.1160/1920.0.1920.1200@1920.0.1920.1200" timestamp="1647351433943" />
     <state x="820" y="491" key="Github.Dialog.Accounts.Choose" timestamp="1645822791149">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -63,11 +60,11 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2381" y="244" key="SettingsEditor/0.0.1920.1160/1920.0.1920.1200@1920.0.1920.1200" timestamp="1646428392282" />
-    <state x="2472" y="323" key="Vcs.Push.Dialog.v2" timestamp="1647278683258">
+    <state x="2472" y="323" key="Vcs.Push.Dialog.v2" timestamp="1647351438266">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="552" y="312" key="Vcs.Push.Dialog.v2/0.0.1920.1160/1920.0.1920.1200@0.0.1920.1160" timestamp="1646252967258" />
-    <state x="2472" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1160/1920.0.1920.1200@1920.0.1920.1200" timestamp="1647278683258" />
+    <state x="2472" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1160/1920.0.1920.1200@1920.0.1920.1200" timestamp="1647351438266" />
     <state x="2543" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1646413294686">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>

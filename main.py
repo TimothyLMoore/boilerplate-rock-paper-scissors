@@ -5,10 +5,10 @@ from unittest import main
 from time import time
 
 
-play(player, quincy, 300)
-play(player, abbey, 300)
-play(player, kris, 300)
-play(player, mrugesh, 300)
+play(player, quincy, 1000)
+play(player, abbey, 1000)
+play(player, kris, 1000)
+play(player, mrugesh, 1000)
 
 # Uncomment line below to play interactively against a bot:
 # play(human, abbey, 20, verbose=True)
