@@ -8,7 +8,7 @@ from time import time
 
 def player(prev_opponent_play, opponent_history=[], play_order=[{}]):
 
-    chain_length = 4
+    chain_length = 5
 
     if not prev_opponent_play:
         prev_opponent_play = 'R'
