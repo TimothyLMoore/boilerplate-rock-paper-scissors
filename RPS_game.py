@@ -44,7 +44,7 @@ def play(player1, player2, num_games, verbose=False):
     print("Final results:", results)
     print(f"Player 1 win rate: {win_rate}%")
 
-    return (win_rate, opp_played, my_played)
+    return (win_rate)
 
 
 def quincy(prev_play, counter=[0]):

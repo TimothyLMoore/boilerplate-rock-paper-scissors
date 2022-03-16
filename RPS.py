@@ -6,10 +6,6 @@ import numpy as np
 import pickle
 from time import time
 
-with open("./model/le.obj", 'rb') as f:
-    le = pickle.load(f)
-
-
 def player(prev_opponent_play, opponent_history=[], play_order=[{}]):
 
     chain_length = 4
