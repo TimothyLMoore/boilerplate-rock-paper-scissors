@@ -1,4 +1,4 @@
-# FreeCodeCamp Project #1
+# FreeCodeCamp Project - Rock, Paper, Scissors bot 
 
 ### Assignment - Description
 
